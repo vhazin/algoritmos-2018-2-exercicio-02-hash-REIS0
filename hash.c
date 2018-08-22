@@ -2,38 +2,30 @@
 
 int main(void) {
 
-  int count = 0;
-  unsigned long int t;
+  int contador, count = 0;
+  unsigned long int a, b, x, n, c, d, m;
+  unsigned long int t, i;
   scanf("%lu\n", &t);
+  int result[t];
 
   while (count < t) {
 
-    int contador;
-    unsigned long int a, b, x, n, c, d, m;
     scanf("%lu %lu %lu %lu %lu %lu %lu\n", &a, &b, &x, &n, &c, &d, &m);
 
-    if (c > d >= m || a > m || b > m) {
-      int i;
-      int result[t];
-      int h;
+    int h;
+    for (size_t i = 0; i <= n; i++) {
       h = (a * (x + i) + b) % m;
-      for (size_t i = 0; i < n; i++) {
-        if (result[i] == 0) {
-          result[i] = h;
-        }
-        else {
-          ++i;
-        }
+      if (c <= h <= d) {
+          result[i] = contador;
       }
-      for (size_t i = 0; i < n; i++) {
-        if (result[i] == h) {
-          return ++contador;
-          ++i;
-        }
+      else{
+        ++contador;
       }
-      ++count;
-      printf("%d\n", contador);
     }
+    ++count;
   }
- return 0;
+  for (size_t i = 0; i < t; i++) {
+    printf("%d\n", result[i]);
+  }
+  return 0;
 }
