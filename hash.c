@@ -2,7 +2,7 @@
 
 int main(void) {
 
-  int contador, count = 0;
+  int contador = 0, count = 0;
   unsigned long int a, b, x, n, c, d, m;
   unsigned long int t, i;
   scanf("%lu\n", &t);
@@ -15,17 +15,20 @@ int main(void) {
     int h;
     for (size_t i = 0; i <= n; i++) {
       h = (a * (x + i) + b) % m;
-      if (c <= h <= d) {
+      if (c <= h && h <= d) {
           result[i] = contador;
+          continue;
       }
-      else{
+      else {
         ++contador;
+        continue;
       }
     }
     ++count;
   }
   for (size_t i = 0; i < t; i++) {
     printf("%d\n", result[i]);
+    continue;
   }
   return 0;
 }
